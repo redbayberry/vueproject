@@ -7,7 +7,7 @@
     </div>
     </transition>
     <div class="cart-count" v-show="food.count>0">{{food.count}}</div>
-    <div class="cart-add icon-add_circle" @click="addCart"></div>
+    <div class="cart-add icon-add_circle" @click.stop="addCart"></div>
   </div>
 </template>
 <script>
@@ -50,7 +50,8 @@ export default {
   font-size: 0 // 让空格引起的间隙为0
   .cart-decrease
     display: inline-block
-    padding: 6px// 增加加减号的点击区域，同时又不让样式发生变化, 
+    padding: 6px
+    // 增加加减号的点击区域，同时又不让样式发生变化, 
     &.move-enter-active,&.move-leave-active
       transition: all 0.3s linear
       .inner
@@ -62,7 +63,7 @@ export default {
       transform: translate3D(24px,0,0)// 用translate3D是为了用硬件加速
       .inner
         transform: rotate(180deg)
-    .inner
+    .inner   
       line-height: 24px
       font-size: 24px
       color: rgb(0,160,220)           
