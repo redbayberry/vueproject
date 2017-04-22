@@ -26,7 +26,7 @@ const router = new VueRouter({
   routes
 })
 // 刚开始打开网页是默认激活一个链接
-router.push('/ratings')
+router.push('/seller')
 
 /* eslint-disable no-new */
 new Vue({
